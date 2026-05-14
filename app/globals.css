@@ -2,25 +2,50 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2a2a2a;
+
+  /* Wedding palette */
+  --color-terracotta: #c16f3f;
+  --color-gold:       #c16f3f;
+  --color-sage:       #85997f;
+  --color-sage-bg:    #85997f;
+  --color-burgundy:   #7c1b1b;
+  --color-cream:      #ffffff;
+  --color-text-mid:   #555555;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Expose palette as Tailwind utilities: bg-terracotta, text-sage, etc. */
+  --color-terracotta: var(--color-terracotta);
+  --color-gold:       var(--color-gold);
+  --color-sage:       var(--color-sage);
+  --color-sage-bg:    var(--color-sage-bg);
+  --color-burgundy:   var(--color-burgundy);
+  --color-cream:      var(--color-cream);
+  --color-text-mid:   var(--color-text-mid);
+
+  /* Font families */
+  --font-script: var(--font-script);
+  --font-serif:  var(--font-serif);
+  --font-body:   var(--font-body);
 }
 
 body {
-  background: var(--background);
+  background: var(--color-cream);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Georgia, serif;
+}
+
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
