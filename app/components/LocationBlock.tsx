@@ -1,10 +1,9 @@
-import type { ReactNode } from "react";
+import Image from "next/image";
 
 interface LocationBlockProps {
   dayLabel: string;
   date: string;
   venueName: string;
-  sketch: ReactNode;
   className?: string;
 }
 
@@ -12,7 +11,6 @@ export default function LocationBlock({
   dayLabel,
   date,
   venueName,
-  sketch,
   className = "",
 }: LocationBlockProps) {
   return (
@@ -40,10 +38,14 @@ export default function LocationBlock({
         Location
       </span>
 
-      <div className="mx-auto overflow-hidden bg-gradient-to-br from-stone-200 to-stone-300 flex items-center justify-center
-                      mb-3 aspect-[4/3] w-[90%] max-w-[340px]
-                      md:mb-6 md:max-w-[700px]">
-        {sketch}
+      {/* Replaced placeholder sketch with the actual Westin image */}
+      <div className="relative mx-auto mb-3 aspect-[4/3] w-[90%] max-w-[340px] md:mb-6 md:max-w-[700px]">
+        <Image 
+          src="/photos/westin.png" 
+          alt="The Westin Bangkok" 
+          fill 
+          className="object-contain" 
+        />
       </div>
 
       <p className="font-serif uppercase text-text-mid mt-2.5

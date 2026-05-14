@@ -23,8 +23,8 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Anjali & Karin — Save the Dates",
-  description: "27 & 28 June 2026 · Bangkok",
+  title: "Anjali & Tharin — Save the Dates",
+  description: "",
 };
 
 export default function RootLayout({

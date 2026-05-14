@@ -4,18 +4,18 @@ export default function HeroSaveTheDates() {
   return (
     <section className="bg-cream px-0 md:px-6 pt-14 pb-10 text-center md:pt-24 md:pb-20 overflow-hidden">
       
-      {/* Title needs its own padding since section padding is now 0 */}
-      <h1 className="font-script text-terracotta leading-[1.1] mb-8 md:mb-16
-                     text-[clamp(52px,14vw,180px)] px-6">
-        Save
-        <br />
-        the Dates
+      <h1 className="relative h-[1400px] w-full">
+        <span className="sr-only">Save the Dates</span> {/* Hidden from eyes, visible to Google */}
+        <Image 
+          src="/photos/save-the-date.png" 
+          alt="" 
+          fill 
+          className="object-contain" 
+          priority
+          fetchPriority="high"
+        />
       </h1>
-
-      {/* 1. Increased width to 95vw (almost edge to edge)
-        2. Increased height significantly (min-h-[70vh] or a taller aspect ratio)
-        3. Removed max-width restriction for now so you can see it grow
-      */}
+      
       <div className="relative mx-auto mb-8 md:mb-20 w-[95vw] md:w-[90vw] aspect-[3/4] md:aspect-[16/10] min-h-[600px]">
         
         {/* Layer 1: Sides */}
