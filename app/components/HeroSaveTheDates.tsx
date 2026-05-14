@@ -4,15 +4,15 @@ export default function HeroSaveTheDates() {
   return (
     <section className="bg-cream px-0 md:px-6 pt-14 pb-10 text-center md:pt-24 md:pb-20 overflow-hidden">
       
-      <h1 className="relative h-[1400px] w-full">
-        <span className="sr-only">Save the Dates</span> {/* Hidden from eyes, visible to Google */}
+      <h1 className="relative mx-auto mb-8 w-[60vw] md:w-[40vw] max-w-[450px] h-[100px] md:h-[180px]">
+        <span className="sr-only">Save the Dates</span>
         <Image 
           src="/photos/save-the-date.png" 
-          alt="" 
+          alt="Save the Dates" 
           fill 
+          sizes="(max-width: 768px) 60vw, 450px"
           className="object-contain" 
           priority
-          fetchPriority="high"
         />
       </h1>
       
@@ -74,8 +74,8 @@ export default function HeroSaveTheDates() {
             27 . 06 . 2026
           </span>
           <span className="block font-serif uppercase text-text-mid
-                           text-[9px] tracking-[0.25em]
-                           md:text-[16px] md:tracking-[0.4em]">
+                           text-[15px] tracking-[0.25em]
+                           md:text-[25px] md:tracking-[0.4em]">
             Wedding
           </span>
         </div>
@@ -86,8 +86,8 @@ export default function HeroSaveTheDates() {
             28 . 06 . 2026
           </span>
           <span className="block font-serif uppercase text-text-mid
-                           text-[9px] tracking-[0.25em]
-                           md:text-[16px] md:tracking-[0.4em]">
+                           text-[15px] tracking-[0.25em]
+                           md:text-[25px] md:tracking-[0.4em]">
             Reception
           </span>
         </div>

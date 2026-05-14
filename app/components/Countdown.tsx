@@ -27,9 +27,7 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-sage-bg text-center
-                        px-6 pt-8 pb-7
-                        md:px-12 md:pt-24 md:pb-24">
+    <section className="relative overflow-hidden bg-sage-bg text-center px-6 pt-8 pb-7 md:px-12 md:pt-24 md:pb-24">
       
       <div
         className="pointer-events-none absolute inset-0"

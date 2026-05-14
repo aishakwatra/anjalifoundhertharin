@@ -35,16 +35,7 @@ export default function ClosingPolaroids() {
           We can&apos;t wait to celebrate together.
         </p>
       </div>
-
-      <div className="mt-6 md:mt-16 text-terracotta tracking-[0.3em] opacity-70
-                      text-[18px] md:text-[28px]">
-        ❧ ⸻ ❧
-      </div>
-      <span className="block font-script text-terracotta opacity-60
-                       mt-6 text-3xl
-                       md:mt-12 md:text-7xl">
-        Anjali &amp; Karin
-      </span>
+     
     </section>
   );
 }

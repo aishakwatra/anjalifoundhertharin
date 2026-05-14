@@ -9,55 +9,40 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen bg-cream">
-      {/* 1. HERO - Cursive Title + Triptych Photos */}
+      {/* 1. HERO */}
       <HeroSaveTheDates />
 
-      {/* 2. COUNTDOWN - Timer with decorative line separators */}
+      {/* 2. COUNTDOWN - Now includes low-opacity background photo */}
       <Countdown />
 
-      {/* 3. DAY ONE LOCATION - Westin Sketch */}
+      {/* 3. DAY ONE LOCATION - The Westin */}
       <LocationBlock
         dayLabel="Day One"
-        date="27 . 06 . 2026"
+        date="27 . 06 . 2026 — THE WEDDING"
         venueName="The Westin Grande Sukhumvit, Bangkok"
+        venueImage="/photos/westin.png"
       />
 
-      {/* 4. FUNCTIONS & CEREMONIES - Timeline with Baraat/Phere icons */}
+      {/* 4. FUNCTIONS & CEREMONIES - Timeline with custom icons */}
       <FunctionsCeremonies />
 
-      {/* TRANSITION - Elegant Orchid Divider */}
-      <div className="relative w-full h-32 md:h-64 my-10">
-        <Image 
-          src="/photos/orchid.png" 
-          alt="" 
-          fill 
-          className="object-contain opacity-40"
-        />
-      </div>
-
-      {/* 5. RECEPTION - Burgundy Banner with glasses icon */}
-      <ReceptionBanner />
-      
-      {/* 6. DAY TWO LOCATION - Reusing LocationBlock for Reception */}
+      {/* 5. DAY TWO LOCATION - Royal Orchid Sheraton (Moved above Reception) */}
       <LocationBlock
         dayLabel="Day Two"
-        date="28 . 06 . 2026"
-        venueName="The Westin Grande Sukhumvit, Bangkok"
-        className="pt-0 md:pt-0" 
+        date="28 . 06 . 2026 — THE RECEPTION"
+        venueName="Royal Orchid Sheraton Riverside Hotel, Bangkok"
+        venueImage="/photos/orchid.png"
       />
+
+      {/* 6. RECEPTION BANNER - With translucent background photo */}
+      <ReceptionBanner />
 
       {/* 7. CLOSING - Polaroid Gallery */}
       <ClosingPolaroids />
 
-      {/* FOOTER DECORATION */}
       <footer className="pb-16 text-center">
         <div className="relative w-16 h-16 mx-auto opacity-60">
-          <Image 
-            src="/photos/line.png" 
-            alt="" 
-            fill 
-            className="object-contain rotate-90"
-          />
+          <Image src="/photos/line.png" alt="" fill className="object-contain rotate-90" />
         </div>
       </footer>
     </main>
