@@ -29,13 +29,15 @@ export default function Countdown() {
   return (
     <section className="relative overflow-hidden bg-sage-bg text-center px-6 pt-8 pb-7 md:px-12 md:pt-24 md:pb-24">
       
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.07) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(0,0,0,0.08) 0%, transparent 50%)",
-        }}
-      />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/photos/couple2.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-15"
+          sizes="100vw"
+        />
+      </div>
 
       <div className="relative mx-auto mb-1.5 md:mb-4 w-[50vw] md:w-[35vw] max-w-[400px] h-[80px] md:h-[140px]">
         <Image
