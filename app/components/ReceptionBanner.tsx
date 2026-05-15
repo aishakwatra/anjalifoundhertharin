@@ -41,7 +41,22 @@ export default function ReceptionBanner() {
               Royal Orchid Ballroom
             </p>
           </div>
+
+          
         </div>
+
+         <div className="mt-10 md:mt-16 text-center">
+        <span className="block font-serif uppercase text-white/90
+                         text-[13px] tracking-[0.35em]
+                         md:text-[22px] md:tracking-[0.5em]">
+          Dresscode
+        </span>
+        <span className="block font-serif uppercase text-white
+                         text-[20px] tracking-[0.3em] mt-1
+                         md:text-[32px] md:tracking-[0.4em] md:mt-2">
+          Elegant Indian Attire
+        </span>
+      </div>
       </div>
     </div>
   );
