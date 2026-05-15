@@ -27,20 +27,21 @@ export default function FamilyInvite() {
       <div className="mx-auto mb-6 md:mb-10
                       max-w-[320px] md:max-w-[650px]">
         <p className="font-serif text-text-mid
-                      text-[13px] leading-[2]
-                      md:text-[22px] md:leading-[2]">
-          Mrs. Geeta Upadhya & Late Mr. Arun Upadhya
+          text-[13px] leading-[2]
+          md:text-[22px] md:leading-[2]">
+          Mrs. Lovely Sethi & Mr. Gursharan Sethi
         </p>
         <p className="font-serif text-text-mid
                       text-[13px] leading-[2]
                       md:text-[22px] md:leading-[2]">
           and
         </p>
-        <p className="font-serif text-text-mid
+         <p className="font-serif text-text-mid
                       text-[13px] leading-[2]
                       md:text-[22px] md:leading-[2]">
-          Mrs. Lovely Sethi & Mr. Gursharan Sethi
+          Mrs. Geeta Upadhya & Late Mr. Arun Upadhya
         </p>
+        
       </div>
 
       {/* Invite line */}
