@@ -8,6 +8,7 @@ import Countdown from "./components/Countdown";
 import ReceptionBanner from "./components/ReceptionBanner";
 import ClosingPolaroids from "./components/ClosingPolaroids";
 import EnvelopeGate from "./components/EnvelopeGate";
+import FamilyInvite from "./components/FamilyInvite";
 import Image from "next/image";
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
 
       {/* Pass opened state to hero so it only animates after gate dismissal */}
       <HeroSaveTheDates animate={opened} />
-
+      <FamilyInvite/>
       <Countdown />
       <LocationBlock
         dayLabel="Day One"

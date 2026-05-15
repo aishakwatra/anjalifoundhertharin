@@ -7,7 +7,7 @@ interface HeroProps {
 
 export default function HeroSaveTheDates({ animate }: HeroProps) {
   return (
-    <section className="bg-cream px-0 md:px-6 pt-14 pb-10 text-center md:pt-24 md:pb-20 overflow-hidden">
+    <section className="bg-cream px-0 md:px-6 pt-14 pb-4 text-center md:pt-24 md:pb-8 overflow-hidden">
       
       <h1 className="relative mx-auto mb-1 w-[70vw] md:w-[40vw] max-w-[450px] h-[150px] md:h-[180px]">
         <span className="sr-only">Save the Dates</span>
@@ -98,17 +98,9 @@ export default function HeroSaveTheDates({ animate }: HeroProps) {
             Reception
           </span>
         </div>
-      </div>
 
-      <div className="mx-auto mb-6 md:mb-10 w-40 md:w-44 opacity-80">
-              <Image 
-                src="/photos/line.png" 
-                alt="" 
-                width={500}
-                height={60}
-                className="w-full h-auto"
-              />
       </div>
     </section>
   );
+  
 }
