@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-export default function HeroSaveTheDates() {
+interface HeroProps {
+  animate: boolean;
+}
+
+
+export default function HeroSaveTheDates({ animate }: HeroProps) {
   return (
     <section className="bg-cream px-0 md:px-6 pt-14 pb-10 text-center md:pt-24 md:pb-20 overflow-hidden">
       
@@ -21,14 +26,14 @@ export default function HeroSaveTheDates() {
                 aspect-square">
         
         {/* Layer 1: Sides */}
-        <div className="absolute inset-0">
+         <div className="absolute inset-0">
           <Image
             src="/photos/hero-sides.png"
             alt=""
             fill
-            sizes="95vw"
-            className="object-cover md:object-contain" 
-            style={{ animation: "fadeSlideDown 1.2s ease forwards" }}
+            sizes="(max-width: 768px) 95vw, 75vw"
+            className="object-contain"
+            style={animate ? { animation: "fadeSlideDown 1.2s ease forwards" } : { opacity: 0 }}
             priority
           />
         </div>
@@ -39,9 +44,9 @@ export default function HeroSaveTheDates() {
             src="/photos/hero-middle.png"
             alt=""
             fill
-            sizes="95vw"
-            className="object-cover md:object-contain"
-            style={{ animation: "fadeSlideUp 1.2s ease forwards" }}
+            sizes="(max-width: 768px) 95vw, 75vw"
+            className="object-contain"
+            style={animate ? { animation: "fadeSlideUp 1.2s ease forwards" } : { opacity: 0 }}
             priority
           />
         </div>
