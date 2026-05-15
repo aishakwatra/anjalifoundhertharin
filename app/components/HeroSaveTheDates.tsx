@@ -4,7 +4,7 @@ export default function HeroSaveTheDates() {
   return (
     <section className="bg-cream px-0 md:px-6 pt-14 pb-10 text-center md:pt-24 md:pb-20 overflow-hidden">
       
-      <h1 className="relative mx-auto mb-1 w-[60vw] md:w-[40vw] max-w-[450px] h-[800px] md:h-[180px]">
+      <h1 className="relative mx-auto mb-1 w-[70vw] md:w-[40vw] max-w-[450px] h-[150px] md:h-[180px]">
         <span className="sr-only">Save the Dates</span>
         <Image 
           src="/photos/save-the-date.png" 
@@ -16,7 +16,9 @@ export default function HeroSaveTheDates() {
         />
       </h1>
       
-      <div className="relative mx-auto mb-8 md:mb-20 w-[95vw] md:w-[90vw] aspect-[3/4] md:aspect-[16/10] min-h-[600px]">
+      <div className="relative mx-auto mb-8 md:mb-20
+                w-[95vw] md:w-[75vw]
+                aspect-square">
         
         {/* Layer 1: Sides */}
         <div className="absolute inset-0">

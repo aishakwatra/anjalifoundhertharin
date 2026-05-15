@@ -32,6 +32,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Anjali & Tharin — Save the Dates",
   description: "",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

@@ -27,7 +27,7 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-sage-bg text-center px-6 pt-8 pb-7 md:px-12 md:pt-24 md:pb-24">
+    <section className="relative overflow-hidden bg-sage-bg text-center px-6 pt-8 pb-14 md:px-12 md:pt-24 md:pb-32">
       
       <div className="absolute inset-0 z-0">
         <Image
@@ -39,7 +39,7 @@ export default function Countdown() {
         />
       </div>
 
-      <div className="relative mx-auto mb-1.5 md:mb-4 w-[50vw] md:w-[35vw] max-w-[400px] h-[80px] md:h-[140px]">
+      <div className="relative mx-auto mb-1.5 md:mb-4 w-[50vw] md:w-[35vw] max-w-[400px] h-[100px] md:h-[180px]">
         <Image
           src="/photos/countdown.png"
           alt="Countdown"
@@ -48,9 +48,9 @@ export default function Countdown() {
           className="object-contain"
         />
       </div>
-      <p className="relative font-serif uppercase text-white/75
+      <p className="relative font-display font-medium uppercase text-white/75
                     text-[9px] tracking-[0.3em] mb-5
-                    md:text-[18px] md:tracking-[0.4em] md:mb-20">
+                    md:text-[25px] md:tracking-[0.4em] md:mb-20">
         To the most special day of our lives
       </p>
 

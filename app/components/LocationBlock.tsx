@@ -23,7 +23,7 @@ export default function LocationBlock({
       </span>
       
       {/* Date */}
-      <p className="font-display uppercase text-[13px] tracking-[0.25em] mb-2 md:text-[26px] md:tracking-[0.2em] md:mb-4">
+      <p className="font-display uppercase text-[13px] tracking-[0.25em] mb-4 md:text-[26px] md:tracking-[0.2em] md:mb-8">
         {date}
       </p>
 
@@ -38,7 +38,7 @@ export default function LocationBlock({
       </div>
 
       {/* Location script */}
-      <div className="mx-auto mb-8 md:mb-12 w-64 md:w-[380px]">
+      <div className="mx-auto mb-2 md:mb-2 w-45 md:w-[320px]">
         <Image 
           src="/photos/location.png" 
           alt="Location" 

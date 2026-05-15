@@ -5,23 +5,23 @@ export default function FunctionsCeremonies() {
     <section className="bg-sage pb-12 md:pb-24 text-center">
       <div className="px-6 pt-7 pb-5 md:pt-16 md:pb-12">
         <div className="mb-5 md:mb-10 flex justify-center gap-5 md:gap-12">
-          <div className="relative w-[150px] h-[150px] opacity-75">
+          <div className="relative w-[80px] h-[80px] md:w-[200px] md:h-[200px] opacity-75">
             <Image 
               src="/photos/ganesh.png" 
               alt="Ganesh" 
               fill 
-              sizes="150px"
+              sizes="(max-width: 768px) 80px, 200px"
               className="object-contain" 
-             />
+            />
           </div>
-          <div className="relative w-[150px] h-[150px] opacity-75">
+          <div className="relative w-[80px] h-[80px] md:w-[200px] md:h-[200px] opacity-75">
             <Image 
               src="/photos/onkar.png" 
               alt="Ek Onkar" 
               fill 
-              sizes="150px" 
+              sizes="(max-width: 768px) 80px, 200px"
               className="object-contain" 
-             />
+            />
           </div>
         </div>
         <div className="relative mx-auto mb-8 w-[70vw] md:w-[50vw] max-w-[600px] h-[150px] md:h-[280px]">
@@ -35,23 +35,30 @@ export default function FunctionsCeremonies() {
         </div>
       </div>
 
-      <div className="px-9 md:px-24 text-left max-w-[700px] mx-auto">
+      <div className="px-9 md:px-24 text-left max-w-[900px] mx-auto">
         <TimelineItem
-          time="14:00"
+          time="15:00"
           event="Baraat Starts"
           detail="Groom's Side"
           iconPath="/photos/baraat.png"
         />
         <TimelineItem
-          time="15:00"
+          time="16:00"
           event="Welcome Baraat"
           detail="Bride's Side"
           iconPath="/photos/baraat.png"
         />
         <TimelineItem
-          time="16:00"
-          event="Varmala & Phere"
+          time="17:00"
+          event="Varmala"
+          iconPath="/photos/varmala.png"
+          className="h-44 md:h-64"
+        />
+        <TimelineItem
+          time="18:00"
+          event="Phere"
           iconPath="/photos/phere.png"
+          className="h-44 md:h-64"
           isLast
         />
       </div>
@@ -65,50 +72,52 @@ function TimelineItem({
   detail,
   iconPath,
   isLast = false,
+  lineOffset = "left-9 md:left-20",
+  className = "",
 }: {
   time: string;
   event: string;
   detail?: string;
   iconPath: string;
   isLast?: boolean;
+  lineOffset?: string;
+  className?: string;
 }) {
   return (
-    <div className="relative flex items-start gap-5 md:gap-8">
-      {/* Line starts at bottom edge of icon (top-20 = 80px on mobile, top-28 = 112px on desktop)
-          and left is half the icon width to stay centered beneath it */}
+    <div className={`relative flex items-center gap-5 md:gap-12 h-36 md:h-56 ${className}`}>
       {!isLast && (
-        <span className="absolute left-10 md:left-14 top-20 md:top-28 bottom-0 w-px bg-white/30" />
+        <span className={`absolute ${lineOffset} top-[80%] bottom-[-20%] w-px bg-white/30`} />
       )}
 
-      {/* Fixed-size icon column */}
-      <div className="w-20 h-20 flex-shrink-0 relative md:w-28 md:h-28">
-        <Image 
-          src={iconPath} 
-          alt="" 
-          fill 
-          sizes="(max-width: 768px) 80px, 112px"
-          className="object-contain opacity-70" 
+      {/* Icon — bigger on desktop */}
+      <div className="w-20 h-20 flex-shrink-0 relative md:w-36 md:h-36">
+        <Image
+          src={iconPath}
+          alt=""
+          fill
+          sizes="(max-width: 768px) 80px, 144px"
+          className="object-contain opacity-70"
         />
       </div>
 
-      {/* Text — pb creates the gap between items so the line has space to breathe */}
-      <div className="pt-1.5 pb-12 md:pb-16">
-        <span className="block font-serif text-white/65 mb-0.5 md:mb-2
-                        text-[11px] tracking-wider
-                        md:text-[18px]">
+      {/* Text */}
+      <div>
+        <span className="block font-display text-white/65 mb-0.5 md:mb-3
+                         text-[13px] tracking-wider
+                         md:text-[24px] md:tracking-[0.15em]">
           {time}
         </span>
-        <p className="font-serif font-medium uppercase text-white mb-0.5 md:mb-2
-                    text-[14px] tracking-[0.2em]
-                    md:text-[22px] md:tracking-[0.15em]">
+        <p className="font-serif font-medium uppercase text-white mb-0.5 md:mb-3
+                      text-[16px] tracking-[0.2em]
+                      md:text-[32px] md:tracking-[0.15em]">
           {event}
         </p>
         {detail && (
           <span className="font-serif uppercase text-white/50
-                 text-[9px] tracking-[0.2em]
-                 md:text-[14px] md:tracking-[0.3em]">
+                           text-[11px] tracking-[0.2em]
+                           md:text-[18px] md:tracking-[0.3em]">
             {detail}
-          </span> 
+          </span>
         )}
       </div>
     </div>

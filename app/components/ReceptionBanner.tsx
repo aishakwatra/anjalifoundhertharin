@@ -30,7 +30,7 @@ export default function ReceptionBanner() {
           </div>
 
           <div className="text-left">
-            <p className="font-serif uppercase text-white
+            <p className="font-display uppercase text-white
                           text-[13px] tracking-[0.3em] mb-1
                           md:text-[22px] md:tracking-[0.25em] md:mb-2">
               19:30 Onwards
