@@ -9,13 +9,13 @@ export default function HeroSaveTheDates({ animate }: HeroProps) {
   return (
     <section className="bg-cream px-0 md:px-6 pt-14 pb-4 text-center md:pt-24 md:pb-8 overflow-hidden">
       
-      <h1 className="relative mx-auto mb-1 w-[70vw] md:w-[40vw] max-w-[450px] h-[150px] md:h-[180px]">
-        <span className="sr-only">Save the Dates</span>
+      <h1 className="relative mx-auto mb-8 w-[80vw] md:w-[60vw] max-w-[600px] h-[150px] md:h-[200px]">
+        <span className="sr-only">You're Invited</span>
         <Image 
-          src="/photos/save-the-date.png" 
+          src="/photos/youre-invited.png" 
           alt="Save the Dates" 
           fill 
-          sizes="(max-width: 768px) 60vw, 450px"
+          sizes="(max-width: 768px) 80vw, 600px"
           className="object-contain" 
           priority
         />

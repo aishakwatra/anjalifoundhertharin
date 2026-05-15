@@ -5,7 +5,7 @@ export default function FunctionsCeremonies() {
     <section className="bg-sage pb-12 md:pb-24 text-center">
       <div className="px-6 pt-7 pb-5 md:pt-16 md:pb-12">
         <div className="mb-5 md:mb-10 flex justify-center gap-5 md:gap-12">
-          <div className="relative w-[80px] h-[80px] md:w-[200px] md:h-[200px] opacity-75">
+          <div className="relative mb-6 w-[80px] h-[80px] md:w-[200px] md:h-[200px] opacity-75">
             <Image 
               src="/photos/ganesh.png" 
               alt="Ganesh" 
@@ -14,7 +14,7 @@ export default function FunctionsCeremonies() {
               className="object-contain" 
             />
           </div>
-          <div className="relative w-[80px] h-[80px] md:w-[200px] md:h-[200px] opacity-75">
+          <div className="relative mb-6 w-[80px] h-[80px] md:w-[200px] md:h-[200px] opacity-75">
             <Image 
               src="/photos/onkar.png" 
               alt="Ek Onkar" 
@@ -24,7 +24,7 @@ export default function FunctionsCeremonies() {
             />
           </div>
         </div>
-        <div className="relative mx-auto mb-8 w-[70vw] md:w-[50vw] max-w-[600px] h-[150px] md:h-[280px]">
+        <div className="relative mx-auto mb-2 w-[70vw] md:w-[50vw] max-w-[600px] h-[150px] md:h-[280px]">
           <Image 
             src="/photos/functions.png" 
             alt="Functions & Ceremonies" 
