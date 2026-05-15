@@ -1,5 +1,5 @@
 'use client';
-
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const WEDDING_DATE = new Date("2026-06-27T00:00:00+07:00");
@@ -37,10 +37,15 @@ export default function Countdown() {
         }}
       />
 
-      <h2 className="relative font-script text-white mb-1.5 md:mb-4
-                     text-[clamp(38px,10vw,110px)]">
-        Countdown
-      </h2>
+      <div className="relative mx-auto mb-1.5 md:mb-4 w-[50vw] md:w-[35vw] max-w-[400px] h-[80px] md:h-[140px]">
+        <Image
+          src="/photos/countdown.png"
+          alt="Countdown"
+          fill
+          sizes="(max-width: 768px) 50vw, 400px"
+          className="object-contain"
+        />
+      </div>
       <p className="relative font-serif uppercase text-white/75
                     text-[9px] tracking-[0.3em] mb-5
                     md:text-[18px] md:tracking-[0.4em] md:mb-20">
@@ -66,7 +71,7 @@ function TimerUnit({ value, label }: { value: string; label: string }) {
     <div className="text-center
                     min-w-[64px]
                     md:flex-1">
-      <span className="block font-serif font-light text-white leading-none
+      <span className="block font-display font-light text-white leading-none
                        text-[clamp(30px,8vw,120px)]">
         {value}
       </span>

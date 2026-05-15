@@ -23,7 +23,7 @@ export default function LocationBlock({
       </span>
       
       {/* Date */}
-      <p className="font-serif uppercase text-[13px] tracking-[0.25em] mb-2 md:text-[26px] md:tracking-[0.2em] md:mb-4">
+      <p className="font-display uppercase text-[13px] tracking-[0.25em] mb-2 md:text-[26px] md:tracking-[0.2em] md:mb-4">
         {date}
       </p>
 
@@ -61,7 +61,7 @@ export default function LocationBlock({
       </div>
 
       {/* Venue Name */}
-      <p className="font-serif uppercase text-text-mid mt-2 text-[11px] tracking-[0.3em] leading-relaxed md:text-[20px] md:tracking-[0.4em] md:mt-6">
+      <p className="font-display uppercase text-text-mid mt-2 text-[11px] tracking-[0.3em] leading-relaxed md:text-[20px] md:tracking-[0.4em] md:mt-6">
         {venueName}
       </p>
     </div>

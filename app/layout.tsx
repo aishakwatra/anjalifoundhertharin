@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Great_Vibes, Cormorant_Garamond, EB_Garamond } from "next/font/google";
+import { Great_Vibes, Cormorant_Garamond, EB_Garamond, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const greatVibes = Great_Vibes({
@@ -22,6 +22,13 @@ const ebGaramond = EB_Garamond({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-display",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Anjali & Tharin — Save the Dates",
   description: "",
@@ -35,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${greatVibes.variable} ${cormorant.variable} ${ebGaramond.variable} h-full antialiased`}
+      className={`${greatVibes.variable} ${cormorant.variable} ${ebGaramond.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

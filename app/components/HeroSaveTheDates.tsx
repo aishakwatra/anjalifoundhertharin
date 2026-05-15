@@ -4,7 +4,7 @@ export default function HeroSaveTheDates() {
   return (
     <section className="bg-cream px-0 md:px-6 pt-14 pb-10 text-center md:pt-24 md:pb-20 overflow-hidden">
       
-      <h1 className="relative mx-auto mb-8 w-[60vw] md:w-[40vw] max-w-[450px] h-[100px] md:h-[180px]">
+      <h1 className="relative mx-auto mb-1 w-[60vw] md:w-[40vw] max-w-[450px] h-[800px] md:h-[180px]">
         <span className="sr-only">Save the Dates</span>
         <Image 
           src="/photos/save-the-date.png" 
@@ -68,24 +68,24 @@ export default function HeroSaveTheDates() {
       <div className="flex justify-center mb-7 md:mb-16
                       gap-10 md:gap-40">
         <div className="text-center">
-          <span className="block font-serif font-medium text-terracotta mb-1 md:mb-3
+          <span className="block font-display text-terracotta mb-1 md:mb-3
                            text-[14px] tracking-[0.15em]
                            md:text-[48px] md:tracking-[0.08em]">
             27 . 06 . 2026
           </span>
-          <span className="block font-serif uppercase text-text-mid
+          <span className="block font-serif font-medium uppercase text-text-mid
                            text-[15px] tracking-[0.25em]
                            md:text-[25px] md:tracking-[0.4em]">
             Wedding
           </span>
         </div>
         <div className="text-center">
-          <span className="block font-serif font-medium text-terracotta mb-1 md:mb-3
+          <span className="block font-display text-terracotta mb-1 md:mb-3
                            text-[14px] tracking-[0.15em]
                            md:text-[48px] md:tracking-[0.08em]">
             28 . 06 . 2026
           </span>
-          <span className="block font-serif uppercase text-text-mid
+          <span className="block font-serif font-medium uppercase text-text-mid
                            text-[15px] tracking-[0.25em]
                            md:text-[25px] md:tracking-[0.4em]">
             Reception
@@ -93,9 +93,14 @@ export default function HeroSaveTheDates() {
         </div>
       </div>
 
-      <div className="text-terracotta tracking-[0.3em] opacity-70
-                      text-[18px] md:text-[28px]">
-        ❧ ⸻ ❧
+      <div className="mx-auto mb-6 md:mb-10 w-40 md:w-44 opacity-80">
+              <Image 
+                src="/photos/line.png" 
+                alt="" 
+                width={500}
+                height={60}
+                className="w-full h-auto"
+              />
       </div>
     </section>
   );

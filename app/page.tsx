@@ -40,11 +40,6 @@ export default function Home() {
       {/* 7. CLOSING - Polaroid Gallery */}
       <ClosingPolaroids />
 
-      <footer className="pb-16 text-center">
-        <div className="relative w-16 h-16 mx-auto opacity-60">
-          <Image src="/photos/line.png" alt="" fill className="object-contain rotate-90" />
-        </div>
-      </footer>
     </main>
   );
 }
