@@ -34,7 +34,7 @@ export default function EnvelopeGate({ onOpen }: EnvelopeGateProps) {
     >
       <div className="block md:hidden w-full h-full relative">
         <Image
-          src="/photos/envelope-cover-portrait.jpeg"
+          src="/photos/envelope-cover-portrait.png"
           alt="Open your invitation"
           fill
           className="object-cover"
