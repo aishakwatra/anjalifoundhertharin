@@ -74,8 +74,8 @@ export default function FunctionsCeremonies() {
           Dresscode
         </span>
         <span className="block font-serif uppercase text-white
-                         text-[20px] tracking-[0.3em] mt-1
-                         md:text-[32px] md:tracking-[0.4em] md:mt-2">
+                         text-[13px] tracking-[0.3em] mt-1
+                         md:text-[22px] md:tracking-[0.4em] md:mt-2">
           Traditional Indian Attire
         </span>
       </div>
