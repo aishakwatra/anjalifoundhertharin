@@ -37,6 +37,7 @@ export default function EnvelopeGate({ onOpen }: EnvelopeGateProps) {
           src="/photos/envelope-cover-portrait.png"
           alt="Open your invitation"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -47,6 +48,7 @@ export default function EnvelopeGate({ onOpen }: EnvelopeGateProps) {
           src="/photos/envelope-cover-landscape.png"
           alt="Open your invitation"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />

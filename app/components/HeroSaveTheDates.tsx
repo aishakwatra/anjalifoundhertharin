@@ -67,7 +67,7 @@ export default function HeroSaveTheDates({ animate }: HeroProps) {
 
       {/* "We're getting married!" — scales from tiny mobile to display-size desktop */}
       <p className="font-serif uppercase mb-6 md:mb-20
-                    text-[13px] font-medium tracking-[0.15em]
+                    text-[13px] tracking-[0.15em]
                     md:text-[64px] md:font-normal md:tracking-[0.05em]">
         We&apos;re getting married!
       </p>

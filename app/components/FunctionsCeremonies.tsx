@@ -40,23 +40,27 @@ export default function FunctionsCeremonies() {
           time="15:00"
           event="Baraat Starts"
           detail="Groom's Side"
+          location="Lower Lobby (G Floor)"
           iconPath="/photos/baraat.png"
         />
         <TimelineItem
           time="16:00"
           event="Welcome Baraat"
           detail="Bride's Side"
+          location="Foyer Grand Ballroom (7th Floor)"
           iconPath="/photos/baraat.png"
         />
         <TimelineItem
           time="17:00"
           event="Varmala"
+          location="Grand Ballroom (7th Floor)"
           iconPath="/photos/varmala.png"
           className="h-44 md:h-64"
         />
         <TimelineItem
           time="18:00"
           event="Phere"
+          location="Grand Ballroom (7th Floor)"
           iconPath="/photos/phere.png"
           className="h-44 md:h-64"
           isLast
@@ -70,6 +74,7 @@ function TimelineItem({
   time,
   event,
   detail,
+  location,
   iconPath,
   isLast = false,
   lineOffset = "left-9 md:left-20",
@@ -78,6 +83,7 @@ function TimelineItem({
   time: string;
   event: string;
   detail?: string;
+  location?: string;
   iconPath: string;
   isLast?: boolean;
   lineOffset?: string;
@@ -89,7 +95,7 @@ function TimelineItem({
         <span className={`absolute ${lineOffset} top-[80%] bottom-[-20%] w-px bg-white/30`} />
       )}
 
-      {/* Icon — bigger on desktop */}
+      {/* Icon */}
       <div className="w-20 h-20 flex-shrink-0 relative md:w-36 md:h-36">
         <Image
           src={iconPath}
@@ -102,7 +108,7 @@ function TimelineItem({
 
       {/* Text */}
       <div>
-        <span className="block font-display text-white/65 mb-0.5 md:mb-3
+        <span className="block font-display text-white/85 mb-0.5 md:mb-3
                          text-[13px] tracking-wider
                          md:text-[24px] md:tracking-[0.15em]">
           {time}
@@ -113,10 +119,17 @@ function TimelineItem({
           {event}
         </p>
         {detail && (
-          <span className="font-serif uppercase text-white/50
+          <span className="block font-serif uppercase text-white/70
                            text-[11px] tracking-[0.2em]
                            md:text-[18px] md:tracking-[0.3em]">
             {detail}
+          </span>
+        )}
+        {location && (
+          <span className="block font-serif italic text-white/80 mt-0.5
+                           text-[15px] tracking-[0.15em]
+                           md:text-[20px] md:tracking-[0.2em] md:mt-1">
+            {location}
           </span>
         )}
       </div>

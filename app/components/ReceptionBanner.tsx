@@ -35,10 +35,10 @@ export default function ReceptionBanner() {
                           md:text-[22px] md:tracking-[0.25em] md:mb-2">
               19:30 Onwards
             </p>
-            <p className="font-serif uppercase text-white/70
-                          text-[11px] tracking-[0.35em]
-                          md:text-[18px] md:tracking-[0.4em]">
-              Reception
+            <p className="font-serif uppercase text-white/90
+                          text-[10px] tracking-[0.35em]
+                          md:text-[20px] md:tracking-[0.4em]">
+              Royal Orchid Ballroom
             </p>
           </div>
         </div>
