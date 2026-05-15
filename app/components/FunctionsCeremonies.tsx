@@ -76,7 +76,7 @@ export default function FunctionsCeremonies() {
         <span className="block font-serif uppercase text-white
                          text-[20px] tracking-[0.3em] mt-1
                          md:text-[32px] md:tracking-[0.4em] md:mt-2">
-          Formal Indian
+          Traditional Indian Attire
         </span>
       </div>
     </section>

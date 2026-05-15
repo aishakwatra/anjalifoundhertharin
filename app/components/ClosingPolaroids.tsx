@@ -65,34 +65,44 @@ export default function ClosingPolaroids() {
     { src: "/photos/couple2.jpg", alt: "Anjali & Tharin" },
     { src: "/photos/couple3.jpg", alt: "Anjali & Tharin" },
     { src: "/photos/couple4.jpg", alt: "Anjali & Tharin" },
+    { src: "/photos/couple8.jpg", alt: "Anjali & Tharin" },
+    { src: "/photos/couple5.jpg", alt: "Anjali & Tharin" },
+    { src: "/photos/couple6.jpg", alt: "Anjali & Tharin" },
+    { src: "/photos/couple7.jpg", alt: "Anjali & Tharin" },
+   
   ];
 
   const desktopPolaroids: Omit<PolaroidState, "src" | "alt">[] = [
-    { startX: -40, startY: -500, startRotate: -22, endX: -80, endY: 30,  endRotate: -7 },
-    { startX:  30, startY: -450, startRotate:  18, endX:  50, endY: -10, endRotate:  4 },
-    { startX: -20, startY: -480, startRotate: -14, endX: -20, endY: 15,  endRotate: -2 },
-    { startX:  15, startY: -460, startRotate:  20, endX:  60, endY: 5,   endRotate:  6 },
+    { startX: -40,  startY: -520, startRotate: -22, endX: -170, endY:  30,  endRotate: -12 },
+    { startX:  30,  startY: -470, startRotate:  10, endX:   85, endY: -40,  endRotate:   3 },
+    { startX:  20,  startY: -500, startRotate:  18, endX:  340, endY:  20,  endRotate:  11 },
+    { startX: -30,  startY: -510, startRotate: -16, endX: -130, endY:  55,  endRotate:  -8 },
+    { startX:  10,  startY: -480, startRotate:   6, endX:  105, endY:  10,  endRotate:  -2 },
+    { startX:  25,  startY: -460, startRotate:  20, endX:  370, endY: -10,  endRotate:  14 },
+    { startX: -20,  startY: -490, startRotate: -12, endX: -150, endY: -20,  endRotate:  -6 },
+    { startX:  15,  startY: -455, startRotate:   8, endX:  110, endY:  50,  endRotate:   4 },
   ];
 
   const mobilePolaroids: Omit<PolaroidState, "src" | "alt">[] = [
-    { startX: -40, startY: -500, startRotate: -22, endX: -40, endY: 15,  endRotate: -7 },
-    { startX:  30, startY: -450, startRotate:  18, endX:  25, endY: -5,  endRotate:  4 },
-    { startX: -20, startY: -480, startRotate: -14, endX: -10, endY: 10,  endRotate: -2 },
-    { startX:  15, startY: -460, startRotate:  20, endX:  35, endY: 3,   endRotate:  6 },
+    { startX: -40,  startY: -520, startRotate: -22, endX:  -50, endY:  20,  endRotate: -12 },
+    { startX:  30,  startY: -470, startRotate:  10, endX:   50, endY: -15,  endRotate:   3 },
+    { startX:  20,  startY: -500, startRotate:  18, endX:  145, endY:  15,  endRotate:  11 },
+    { startX: -30,  startY: -510, startRotate: -16, endX:  -35, endY:  30,  endRotate:  -8 },
+    { startX:  10,  startY: -480, startRotate:   6, endX:   58, endY:   5,  endRotate:  -2 },
+    { startX:  25,  startY: -460, startRotate:  20, endX:  155, endY:  -8,  endRotate:  14 },
+    { startX: -20,  startY: -490, startRotate: -12, endX:  -40, endY: -10,  endRotate:  -6 },
+    { startX:  15,  startY: -455, startRotate:   8, endX:   55, endY:  25,  endRotate:   4 },
   ];
 
   const base = isDesktop ? desktopPolaroids : mobilePolaroids;
   const polaroids: PolaroidState[] = base.map((p, i) => ({ ...p, ...photos[i] }));
 
-  // First polaroid triggers very early (0→0.15), rest follow
+  // Spread 8 polaroids evenly across the scroll window
   const getPolaroidProgress = (index: number) => {
-    const windows = [
-      { start: 0,    end: 0.15 }, // first one shows up almost immediately
-      { start: 0.2,  end: 0.45 },
-      { start: 0.45, end: 0.65 },
-      { start: 0.65, end: 0.82 },
-    ];
-    const { start, end } = windows[index];
+    const windowSize = 0.14;
+    const gap = (1 - windowSize) / (polaroids.length - 1);
+    const start = index * gap;
+    const end = start + windowSize;
     return easeOut(clamp01((progress - start) / (end - start)));
   };
 
@@ -100,7 +110,7 @@ export default function ClosingPolaroids() {
     <section
       ref={sectionRef}
       className="bg-cream relative md:pb-32"
-      style={{ height: "300vh" }}
+      style={{ height: "400vh" }}
     >
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center px-7 md:px-12">
 
@@ -116,7 +126,6 @@ export default function ClosingPolaroids() {
           <p className="font-body italic text-text-mid text-[15px] md:text-[25px] tracking-widest">
             keep scrolling
           </p>
-          {/* Animated chevron */}
           <svg
             width="20" height="20" viewBox="0 0 20 20"
             className="text-text-mid opacity-60"
@@ -135,8 +144,8 @@ export default function ClosingPolaroids() {
 
         {/* Polaroid stack */}
         <div className="relative mx-auto mt-16 md:mt-24
-                        h-[230px] w-[200px]
-                        md:h-[400px] md:w-[400px]">
+                        h-[260px] w-[230px]
+                        md:h-[460px] md:w-[460px]">
           {polaroids.map((p, i) => {
             const t = getPolaroidProgress(i);
             const x = lerp(p.startX, p.endX, t);
@@ -148,8 +157,8 @@ export default function ClosingPolaroids() {
               <div
                 key={i}
                 className="absolute bg-white shadow-[0_2px_14px_rgba(0,0,0,0.12)]
-                           w-[150px] p-2 pb-6
-                           md:w-[280px] md:p-4 md:pb-12"
+                           w-[170px] p-2.5 pb-7
+                           md:w-[310px] md:p-4 md:pb-14"
                 style={{
                   zIndex: 10 + i * 10,
                   transform: `translate(${x}px, ${y}px) rotate(${rotate}deg)`,
@@ -163,7 +172,7 @@ export default function ClosingPolaroids() {
                     alt={p.alt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 150px, 280px"
+                    sizes="(max-width: 768px) 170px, 310px"
                   />
                 </div>
               </div>
@@ -172,22 +181,21 @@ export default function ClosingPolaroids() {
         </div>
 
         {/* Closing text */}
-          <div className="mx-auto font-body italic text-text-mid text-center
-                          max-w-[340px] text-[15px] leading-[1.9] mt-8
-                          md:max-w-[700px] md:text-[25px] md:leading-[1.8] md:mt-16">
-            <p>
-              With full hearts and so much love, we are so excited to begin this new chapter together. It would truly mean the world to us to have you by our side as we celebrate our wedding.
-            </p>
-            <p className="mt-4 md:mt-8">
-              Your presence would make our day all the more special, and we cannot imagine this moment without the people we love most.
-              <br />
-              We can&apos;t wait to celebrate together.
-            </p>
-          </div>
+        <div className="mx-auto font-body italic text-text-mid text-center
+                        max-w-[340px] text-[15px] leading-[1.9] mt-8
+                        md:max-w-[700px] md:text-[25px] md:leading-[1.8] md:mt-16">
+          <p>
+            With full hearts and so much love, we are so excited to begin this new chapter together. It would truly mean the world to us to have you by our side as we celebrate our wedding.
+          </p>
+          <p className="mt-4 md:mt-8">
+            Your presence would make our day all the more special, and we cannot imagine this moment without the people we love most.
+            <br />
+            We can&apos;t wait to celebrate together.
+          </p>
+        </div>
 
       </div>
 
-      {/* Bounce keyframe */}
       <style>{`
         @keyframes bounce {
           0%, 100% { transform: translateY(0); }
