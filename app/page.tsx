@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from "react";
-import HeroSaveTheDates from "../components/HeroSaveTheDates";
-import FunctionsCeremonies from "../components/FunctionsCeremonies";
-import LocationBlock from "../components/LocationBlock";
-import Countdown from "../components/Countdown";
-import ReceptionBanner from "../components/ReceptionBanner";
-import ClosingPolaroids from "../components/ClosingPolaroids";
-import EnvelopeGate from "../components/EnvelopeGate";
-import FamilyInvite from "../components/FamilyInvite";
+import HeroSaveTheDates2 from "./components/HeroSaveTheDates2";
+import FunctionsCeremonies from "./components/FunctionsCeremonies";
+import LocationBlock from "./components/LocationBlock";
+import Countdown from "./components/Countdown";
+import ReceptionBanner from "./components/ReceptionBanner";
+import ClosingPolaroids from "./components/ClosingPolaroids";
+import EnvelopeGate from "./components/EnvelopeGate";
+import FamilyInvite from "./components/FamilyInvite";
 import Image from "next/image";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
       {!opened && <EnvelopeGate onOpen={() => setOpened(true)} />}
 
       {/* Pass opened state to hero so it only animates after gate dismissal */}
-      <HeroSaveTheDates animate={opened} />
+      <HeroSaveTheDates2 animate={opened} />
       <FamilyInvite/>
       <Countdown />
       <LocationBlock

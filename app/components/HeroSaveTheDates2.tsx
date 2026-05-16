@@ -5,7 +5,7 @@ interface HeroProps {
 }
 
 
-export default function HeroSaveTheDates({ animate }: HeroProps) {
+export default function HeroSaveTheDates2({ animate }: HeroProps) {
   return (
     <section className="bg-cream px-0 md:px-6 pt-14 pb-4 text-center md:pt-24 md:pb-8 overflow-hidden">
       
