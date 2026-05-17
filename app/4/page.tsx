@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from "react";
-import HeroSaveTheDates2 from "./components/HeroSaveTheDates2";
-import FunctionsCeremonies from "./components/FunctionsCeremonies";
-import LocationBlock from "./components/LocationBlock";
-import Countdown from "./components/Countdown";
-import ReceptionBanner from "./components/ReceptionBanner";
-import ClosingPolaroids from "./components/ClosingPolaroids";
-import EnvelopeGate from "./components/EnvelopeGate";
-import FamilyInvite from "./components/FamilyInvite";
+import HeroSaveTheDates from "../components/HeroSaveTheDates";
+import FunctionsCeremonies from "../components/FunctionsCeremonies";
+import LocationBlock from "../components/LocationBlock";
+import Countdown from "../components/Countdown";
+import ReceptionBanner from "../components/ReceptionBanner";
+import ClosingPolaroids from "../components/ClosingPolaroids";
+import EnvelopeGate from "../components/EnvelopeGate";
+import FamilyInvite from "../components/FamilyInvite";
 
 export default function Home() {
   const [opened, setOpened] = useState(false);
@@ -18,8 +18,8 @@ export default function Home() {
       {!opened && <EnvelopeGate onOpen={() => setOpened(true)} />}
 
       {/* Pass opened state to hero so it only animates after gate dismissal */}
-      <HeroSaveTheDates2 animate={opened} />
-      <FamilyInvite/>
+      <HeroSaveTheDates animate={opened} dateSet="27-28" />
+      <FamilyInvite firstParentGroup="bride" />
       <Countdown />
       <LocationBlock
         dayLabel="Day One"
@@ -27,7 +27,7 @@ export default function Home() {
         venueName="The Westin Grande Sukhumvit, Bangkok"
         venueImage="/photos/westin.png"
       />
-      <FunctionsCeremonies />
+      <FunctionsCeremonies topIcon="ganesh" />
       <LocationBlock
         dayLabel="Day Two"
         date="28 . 06 . 2026 — THE RECEPTION"

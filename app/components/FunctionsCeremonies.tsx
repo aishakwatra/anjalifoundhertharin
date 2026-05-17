@@ -1,30 +1,62 @@
 import Image from "next/image";
 
-export default function FunctionsCeremonies() {
+type TopIcon = "ganesh" | "onkar";
+
+const topIcons: Record<
+  TopIcon,
+  { src: string; alt: string; secondarySrc?: string; secondaryAlt?: string }
+> = {
+  ganesh: {
+    src: "/photos/ganesh.png",
+    alt: "Ganesh",
+  },
+  onkar: {
+    src: "/photos/onkar.png",
+    alt: "Ek Onkar",
+    secondarySrc: "/photos/sikhprayer.png",
+    secondaryAlt: "Sikh prayer",
+  },
+};
+
+const phereFollowUps: Record<TopIcon, string> = {
+  ganesh: "Followed by Vidai",
+  onkar: "Followed by Doli",
+};
+
+export default function FunctionsCeremonies({
+  topIcon = "ganesh",
+}: {
+  topIcon?: TopIcon;
+}) {
+  const selectedTopIcon = topIcons[topIcon];
+  const phereFollowUp = phereFollowUps[topIcon];
+
   return (
     <section className="bg-sage pb-12 md:pb-24 text-center">
       <div className="px-6 pt-7 pb-5 md:pt-16 md:pb-12">
-        <div className="mb-5 md:mb-10 flex justify-center gap-5 md:gap-12">
-          <div className="relative mb-6 w-[80px] h-[80px] md:w-[200px] md:h-[200px] opacity-75">
+        <div className="mb-5 md:mb-10 flex flex-col items-center">
+          <div className="relative  w-[120px] h-[120px] md:w-[200px] md:h-[200px] opacity-100">
             <Image 
-              src="/photos/ganesh.png" 
-              alt="Ganesh" 
+              src={selectedTopIcon.src} 
+              alt={selectedTopIcon.alt} 
               fill 
               sizes="(max-width: 768px) 80px, 200px"
               className="object-contain" 
             />
           </div>
-          <div className="relative mb-6 w-[80px] h-[80px] md:w-[200px] md:h-[200px] opacity-75">
-            <Image 
-              src="/photos/onkar.png" 
-              alt="Ek Onkar" 
-              fill 
-              sizes="(max-width: 768px) 80px, 200px"
-              className="object-contain" 
+          {selectedTopIcon.secondarySrc && (
+          <div className="relative -mt-8 mb-0 w-[350px] md:-mt-14 md:w-[460px] aspect-[1900/900] opacity-95">
+            <Image
+              src={selectedTopIcon.secondarySrc}
+              alt={selectedTopIcon.secondaryAlt ?? ""}
+              fill
+              sizes="(max-width: 768px) 150px, 360px"
+              className="object-contain"
             />
           </div>
+          )}
         </div>
-        <div className="relative mx-auto mb-2 w-[70vw] md:w-[50vw] max-w-[600px] h-[150px] md:h-[280px]">
+        <div className="relative mx-auto w-[70vw] md:w-[50vw] max-w-[600px] aspect-[2/1]">
           <Image 
             src="/photos/functions.png" 
             alt="Functions & Ceremonies" 
@@ -38,13 +70,25 @@ export default function FunctionsCeremonies() {
       <div className="px-9 md:px-24 text-left max-w-[900px] mx-auto">
         <TimelineItem
           time="15:00"
+          event="Sagan/Sehra Bandi"
+          location="Lower Lobby (G Floor)"
+          iconPath="/photos/sagan.png"
+        />
+        <TimelineItem
+          time="15:30"
           event="Baraat Starts"
           detail="Groom's Side"
           location="Lower Lobby (G Floor)"
           iconPath="/photos/baraat.png"
         />
         <TimelineItem
-          time="16:00"
+          time="16:30"
+          event="Milni"
+          location="Lower Lobby (G Floor)"
+          iconPath="/photos/milni.png"
+        />
+        <TimelineItem
+          time="16:45"
           event="Welcome Baraat"
           detail="Bride's Side"
           location="Foyer Grand Ballroom (7th Floor)"
@@ -61,6 +105,7 @@ export default function FunctionsCeremonies() {
           time="18:00"
           event="Phere"
           location="Grand Ballroom (7th Floor)"
+          followedBy={phereFollowUp}
           iconPath="/photos/phere.png"
           className="h-44 md:h-64"
           isLast
@@ -88,6 +133,7 @@ function TimelineItem({
   event,
   detail,
   location,
+  followedBy,
   iconPath,
   isLast = false,
   lineOffset = "left-9 md:left-20",
@@ -97,6 +143,7 @@ function TimelineItem({
   event: string;
   detail?: string;
   location?: string;
+  followedBy?: string;
   iconPath: string;
   isLast?: boolean;
   lineOffset?: string;
@@ -143,6 +190,13 @@ function TimelineItem({
                            text-[15px] tracking-[0.15em]
                            md:text-[20px] md:tracking-[0.2em] md:mt-1">
             {location}
+          </span>
+        )}
+        {followedBy && (
+          <span className="block font-serif uppercase text-white/70 mt-0.5
+                           text-[11px] tracking-[0.2em]
+                           md:text-[18px] md:tracking-[0.3em] md:mt-1">
+            {followedBy}
           </span>
         )}
       </div>

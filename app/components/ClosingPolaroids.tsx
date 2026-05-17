@@ -183,7 +183,7 @@ export default function ClosingPolaroids() {
         {/* Closing text */}
         <div className="mx-auto font-body italic text-text-mid text-center
                         max-w-[340px] text-[15px] leading-[1.9] mt-8
-                        md:max-w-[700px] md:text-[25px] md:leading-[1.8] md:mt-16">
+                        md:max-w-[700px] md:text-[19px] md:leading-[1.8] md:mt-32">
           <p>
             With full hearts and so much love, we are so excited to begin this new chapter together. It would truly mean the world to us to have you by our side as we celebrate our wedding.
           </p>
@@ -191,6 +191,11 @@ export default function ClosingPolaroids() {
             Your presence would make our day all the more special, and we cannot imagine this moment without the people we love most.
             <br />
             We can&apos;t wait to celebrate together.
+          </p>
+
+          <p className="mt-4 md:mt-8 font-medium"> 
+     
+            #SoJuforlife
           </p>
         </div>
 

@@ -1,10 +1,29 @@
 import Image from "next/image";
 
-export default function FamilyInvite() {
+type ParentGroup = "bride" | "groom";
+
+const familyGroups: Record<ParentGroup, string[]> = {
+  groom: [
+    "Son of Mr. Gursharansingh Sethi and Mrs. Lovinder Kaur",
+    "G/S of Late Sardarni and sardar avtar singh sethi",
+    "Sardarni and late sardar gursharan singh manchanda",
+  ],
+  bride: [
+    "Daughter of Late Mr. Arun Upadhya & Mrs. Geeta Upadhya",
+    "G/D of Late Ram Asre Upadhya and Usha Devi Upadhya",
+    "Late Ganga Prasad Pathak and Ram Kumari Pathak",
+  ],
+};
+
+export default function FamilyInvite({
+  firstParentGroup = "groom",
+}: {
+  firstParentGroup?: ParentGroup;
+}) {
+  const secondParentGroup = firstParentGroup === "groom" ? "bride" : "groom";
+
   return (
     <section className="bg-cream text-center px-8 py-16 md:px-12 md:py-24">
-
-      {/* Divider top */}
       <div className="mx-auto mb-10 md:mb-16 w-40 md:w-56 opacity-60">
         <Image
           src="/photos/line.png"
@@ -15,7 +34,6 @@ export default function FamilyInvite() {
         />
       </div>
 
-      {/* Opening line */}
       <p className="font-body italic text-text-mid mx-auto
                     max-w-[300px] text-[12px] leading-[1.9]
                     md:max-w-[600px] md:text-[20px] md:leading-[1.8]
@@ -23,51 +41,29 @@ export default function FamilyInvite() {
         With joyful hearts, the families invite you to share in this beautiful celebration.
       </p>
 
-      {/* Family names */}
-      <div className="mx-auto mb-6 md:mb-10
-                      max-w-[320px] md:max-w-[650px]">
-        <p className="font-serif text-text-mid
-          text-[13px] leading-[2]
-          md:text-[22px] md:leading-[2]">
-          Mrs. Lovely Sethi & Mr. Gursharan Sethi
-        </p>
-        <p className="font-serif text-text-mid
-                      text-[13px] leading-[2]
-                      md:text-[22px] md:leading-[2]">
-          and
-        </p>
-         <p className="font-serif text-text-mid
-                      text-[13px] leading-[2]
-                      md:text-[22px] md:leading-[2]">
-          Mrs. Geeta Upadhya & Late Mr. Arun Upadhya
-        </p>
-        
-      </div>
+      <FamilyGroupLines lines={familyGroups[firstParentGroup]} />
 
-      {/* Invite line */}
-      <p className="font-body italic text-text-mid mx-auto
-                    max-w-[280px] text-[12px] leading-[1.9]
-                    md:max-w-[550px] md:text-[20px] md:leading-[1.8]
-                    mb-6 md:mb-10">
-        warmly invite you to join them as their children
+      <p className="font-serif text-text-mid mx-auto mb-6 md:mb-10
+                    text-[13px] leading-[2]
+                    md:text-[22px] md:leading-[2]">
+        and
       </p>
 
-      {/* Names — prominent */}
+      <FamilyGroupLines lines={familyGroups[secondParentGroup]} />
+
       <p className="font-serif uppercase text-terracotta tracking-[0.3em]
                     text-[18px]
                     md:text-[42px] md:tracking-[0.25em]
                     mb-6 md:mb-10">
-        Anjali & Tharin
+        Tharin & Anjali
       </p>
 
-      {/* Closing line */}
       <p className="font-body italic text-text-mid mx-auto
                     max-w-[300px] text-[12px] leading-[1.9]
                     md:max-w-[600px] md:text-[20px] md:leading-[1.8]">
-        begin their journey of marriage together. Your presence and blessings will make this occasion even more meaningful for our families.
+        warmly invite you to join them In the beginning of their journey of marriage together. Your presence and blessings will make this occasion even more meaningful for our families.
       </p>
 
-      {/* Divider bottom */}
       <div className="mx-auto mt-10 md:mt-16 w-40 md:w-56 opacity-60">
         <Image
           src="/photos/line.png"
@@ -77,7 +73,24 @@ export default function FamilyInvite() {
           className="w-full h-auto"
         />
       </div>
-
     </section>
+  );
+}
+
+function FamilyGroupLines({ lines }: { lines: string[] }) {
+  return (
+    <div className="mx-auto mb-6 md:mb-10
+                    max-w-[320px] md:max-w-[650px]">
+      {lines.map((line) => (
+        <p
+          key={line}
+          className="font-serif text-text-mid
+                     text-[13px] leading-[2]
+                     md:text-[22px] md:leading-[2]"
+        >
+          {line}
+        </p>
+      ))}
+    </div>
   );
 }
