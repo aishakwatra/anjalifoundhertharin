@@ -2,19 +2,14 @@ import Image from "next/image";
 
 type TopIcon = "ganesh" | "onkar";
 
-const topIcons: Record<
-  TopIcon,
-  { src: string; alt: string; secondarySrc?: string; secondaryAlt?: string }
-> = {
+const topIcons: Record<TopIcon, { src: string; alt: string }> = {
   ganesh: {
     src: "/photos/ganesh.png",
-    alt: "Ganesh",
+    alt: "Ganesh prayer artwork",
   },
   onkar: {
     src: "/photos/onkar.png",
-    alt: "Ek Onkar",
-    secondarySrc: "/photos/sikhprayer.png",
-    secondaryAlt: "Sikh prayer",
+    alt: "Ek Onkar prayer artwork",
   },
 };
 
@@ -35,26 +30,16 @@ export default function FunctionsCeremonies({
     <section className="bg-sage pb-12 md:pb-24 text-center">
       <div className="px-6 pt-7 pb-5 md:pt-16 md:pb-12">
         <div className="mb-5 md:mb-10 flex flex-col items-center">
-          <div className="relative  w-[120px] h-[120px] md:w-[200px] md:h-[200px] opacity-100">
+          <div className="relative w-[150px] max-w-[78vw] md:w-[300px] aspect-[1700/3000] opacity-100">
             <Image 
               src={selectedTopIcon.src} 
               alt={selectedTopIcon.alt} 
               fill 
-              sizes="(max-width: 768px) 80px, 200px"
+              sizes="(max-width: 768px) 260px, 360px"
               className="object-contain" 
+              unoptimized
             />
           </div>
-          {selectedTopIcon.secondarySrc && (
-          <div className="relative -mt-2 mb-6 w-[120px] md:-mt-6 md:w-[350px] aspect-[1900/900] opacity-95">
-            <Image
-              src={selectedTopIcon.secondarySrc}
-              alt={selectedTopIcon.secondaryAlt ?? ""}
-              fill
-              sizes="(max-width: 768px) 150px, 360px"
-              className="object-contain"
-            />
-          </div>
-          )}
         </div>
         <div className="relative mx-auto w-[70vw] md:w-[50vw] max-w-[600px] aspect-[2/1]">
           <Image 
