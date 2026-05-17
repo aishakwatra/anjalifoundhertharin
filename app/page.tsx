@@ -9,7 +9,6 @@ import ReceptionBanner from "./components/ReceptionBanner";
 import ClosingPolaroids from "./components/ClosingPolaroids";
 import EnvelopeGate from "./components/EnvelopeGate";
 import FamilyInvite from "./components/FamilyInvite";
-import Image from "next/image";
 
 export default function Home() {
   const [opened, setOpened] = useState(false);
