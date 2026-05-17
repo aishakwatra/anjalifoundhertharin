@@ -45,7 +45,7 @@ export default function FunctionsCeremonies({
             />
           </div>
           {selectedTopIcon.secondarySrc && (
-          <div className="relative -mt-8 mb-6 w-[120px] md:-mt-14 md:w-[350px] aspect-[1900/900] opacity-95">
+          <div className="relative -mt-2 mb-6 w-[120px] md:-mt-6 md:w-[350px] aspect-[1900/900] opacity-95">
             <Image
               src={selectedTopIcon.secondarySrc}
               alt={selectedTopIcon.secondaryAlt ?? ""}
