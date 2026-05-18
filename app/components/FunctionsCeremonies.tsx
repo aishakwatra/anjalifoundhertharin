@@ -18,6 +18,11 @@ const phereFollowUps: Record<TopIcon, string> = {
   onkar: "Followed by Doli",
 };
 
+const varmalaEvents: Record<TopIcon, string> = {
+  ganesh: "Varmala",
+  onkar: "Jaimala",
+};
+
 export default function FunctionsCeremonies({
   topIcon = "ganesh",
 }: {
@@ -25,6 +30,7 @@ export default function FunctionsCeremonies({
 }) {
   const selectedTopIcon = topIcons[topIcon];
   const phereFollowUp = phereFollowUps[topIcon];
+  const varmalaEvent = varmalaEvents[topIcon];
 
   return (
     <section className="bg-sage pb-12 md:pb-24 text-center">
@@ -81,7 +87,7 @@ export default function FunctionsCeremonies({
         />
         <TimelineItem
           time="17:00"
-          event="Varmala"
+          event={varmalaEvent}
           location="Grand Ballroom (7th Floor)"
           iconPath="/photos/varmala.png"
           className="h-44 md:h-64"
