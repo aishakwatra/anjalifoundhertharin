@@ -4,14 +4,14 @@ type ParentGroup = "bride" | "groom";
 
 const familyGroups: Record<ParentGroup, string[]> = {
   groom: [
-    "Son of Mr. Gursharansingh Sethi and Mrs. Lovinder Kaur",
-    "G/S of Late Sardarni and Sardar Avtar Singh Sethi",
-    "Sardarni and Late Sardar Gursharan Singh Manchanda",
+    "Son of Mr. Gursharan Singh Sethi and Mrs. Lovinder Kaur",
+    "G/S of Late Sardarni Balbir and Late Sardar Avtar Singh Sethi",
+    "G/S of Sardarni Satnam and Late Sardar Gursharan Singh Manchanda",
   ],
   bride: [
     "Daughter of Late Mr. Arun Upadhya & Mrs. Geeta Upadhya",
-    "G/D of Late Ram Asre Upadhya and Usha Devi Upadhya",
-    "Late Ganga Prasad Pathak and Ram Kumari Pathak",
+    "G/D of Late Ram Asre Upadhya and Late Usha Devi Upadhya",
+    "G/D of Late Ganga Prasad Pathak and Late Ram Kumari Pathak",
   ],
 };
 

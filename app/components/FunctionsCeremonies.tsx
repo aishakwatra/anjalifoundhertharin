@@ -61,7 +61,7 @@ export default function FunctionsCeremonies({
         />
         <TimelineItem
           time="15:30"
-          event="Baraat Starts"
+          event="Baraat"
           detail="Groom's Side"
           location="Lower Lobby (G Floor)"
           iconPath="/photos/baraat.png"
