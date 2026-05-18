@@ -85,7 +85,7 @@ function FamilyGroupLines({ lines }: { lines: string[] }) {
         <p
           key={line}
           className="font-serif text-text-mid
-                     text-[13px] leading-[2]
+                     text-[10px] leading-[2]
                      md:text-[22px] md:leading-[2]"
         >
           {line}
