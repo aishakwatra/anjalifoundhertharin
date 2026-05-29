@@ -155,6 +155,15 @@ function DateDetails({
                        md:text-[25px] md:tracking-[0.4em]">
         {event.label}
       </span>
+      {dateKey === "26" && (
+        <span className="block font-body text-text-mid mt-2 md:mt-4
+                         text-[11px] leading-[1.8] tracking-[0.08em]
+                         md:text-[18px] md:leading-[1.7] md:tracking-[0.1em]">
+          Mata Garden, Rama 5
+          <br />
+          15:00 - 19:00
+        </span>
+      )}
     </div>
   );
 }
