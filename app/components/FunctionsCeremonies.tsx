@@ -25,8 +25,10 @@ const varmalaEvents: Record<TopIcon, string> = {
 
 export default function FunctionsCeremonies({
   topIcon = "ganesh",
+  showTopIcon = true,
 }: {
   topIcon?: TopIcon;
+  showTopIcon?: boolean;
 }) {
   const selectedTopIcon = topIcons[topIcon];
   const phereFollowUp = phereFollowUps[topIcon];
@@ -36,18 +38,20 @@ export default function FunctionsCeremonies({
   return (
     <section className="bg-sage pb-12 md:pb-24 text-center">
       <div className="px-6 pt-7 pb-5 md:pt-16 md:pb-12">
-        <div className="mb-5 md:mb-10 flex flex-col items-center">
-          <div className="relative w-[150px] max-w-[78vw] md:w-[300px] aspect-[1700/3000] opacity-100">
-            <Image
-              src={selectedTopIcon.src}
-              alt={selectedTopIcon.alt}
-              fill
-              sizes="(max-width: 768px) 260px, 360px"
-              className="object-contain"
-              unoptimized
-            />
+        {showTopIcon && (
+          <div className="mb-5 md:mb-10 flex flex-col items-center">
+            <div className="relative w-[150px] max-w-[78vw] md:w-[300px] aspect-[1700/3000] opacity-100">
+              <Image
+                src={selectedTopIcon.src}
+                alt={selectedTopIcon.alt}
+                fill
+                sizes="(max-width: 768px) 260px, 360px"
+                className="object-contain"
+                unoptimized
+              />
+            </div>
           </div>
-        </div>
+        )}
         <div className="relative mx-auto w-[70vw] md:w-[50vw] max-w-[600px] aspect-[2/1]">
           <Image
             src="/photos/functions.png"

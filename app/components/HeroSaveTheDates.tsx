@@ -2,16 +2,30 @@ import Image from "next/image";
 
 type DateSet = "27" | "27-28" | "26-27-28";
 type DateKey = "26" | "27" | "28";
+type IntroIcon = "ganesh" | "ganesh2";
 
 interface HeroProps {
   animate: boolean;
   dateSet?: DateSet;
+  introIcon?: IntroIcon;
+  compactIntroLayout?: boolean;
 }
 
 const dateSets: Record<DateSet, DateKey[]> = {
   "27": ["27"],
   "27-28": ["27", "28"],
   "26-27-28": ["26", "27", "28"],
+};
+
+const introIcons: Record<IntroIcon, { src: string; alt: string }> = {
+  ganesh: {
+    src: "/photos/ganesh.png",
+    alt: "Ganesh prayer artwork",
+  },
+  ganesh2: {
+    src: "/photos/ganesh2.png",
+    alt: "Ganesh prayer artwork",
+  },
 };
 
 const events: Record<
@@ -38,14 +52,32 @@ const events: Record<
 export default function HeroSaveTheDates({
   animate,
   dateSet = "27-28",
+  introIcon,
+  compactIntroLayout = false,
 }: HeroProps) {
   const selectedDates = dateSets[dateSet];
   const includesMehendi = selectedDates.includes("26");
   const primaryDates = selectedDates.filter((date) => date !== "26");
+  const selectedIntroIcon = introIcon ? introIcons[introIcon] : null;
+  const invitedMarginClass = compactIntroLayout ? "mb-0 md:mb-1" : "mb-8";
 
   return (
     <section className="bg-cream px-0 md:px-6 pt-14 pb-4 text-center md:pt-24 md:pb-8 overflow-hidden">
-      <h1 className="relative mx-auto mb-8 w-[80vw] md:w-[60vw] max-w-[600px] h-[150px] md:h-[200px]">
+      {selectedIntroIcon && (
+        <div className="relative mx-auto mb-2 w-[95px] max-w-[58vw] md:mb-3 md:w-[220px] aspect-[1700/3000]">
+          <Image
+            src={selectedIntroIcon.src}
+            alt={selectedIntroIcon.alt}
+            fill
+            sizes="(max-width: 768px) 120px, 220px"
+            className="object-contain"
+            priority
+            unoptimized
+          />
+        </div>
+      )}
+
+      <h1 className={`relative mx-auto ${invitedMarginClass} w-[80vw] md:w-[60vw] max-w-[600px] h-[150px] md:h-[200px]`}>
         <span className="sr-only">You&apos;re Invited</span>
         <Image
           src="/photos/youre-invited.png"

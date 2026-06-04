@@ -18,7 +18,12 @@ export default function Home() {
       {!opened && <EnvelopeGate onOpen={() => setOpened(true)} />}
 
       {/* Pass opened state to hero so it only animates after gate dismissal */}
-      <HeroSaveTheDates animate={opened} dateSet="27" />
+      <HeroSaveTheDates
+        animate={opened}
+        dateSet="27"
+        introIcon="ganesh2"
+        compactIntroLayout
+      />
       <FamilyInvite firstParentGroup="bride" />
       <Countdown />
       <LocationBlock
@@ -27,7 +32,7 @@ export default function Home() {
         venueName="The Westin Grande Sukhumvit, Bangkok"
         venueImage="/photos/westin.png"
       />
-      <FunctionsCeremonies topIcon="ganesh" />
+      <FunctionsCeremonies topIcon="ganesh" showTopIcon={false} />
       <ClosingPolaroids />
 
     </main>
