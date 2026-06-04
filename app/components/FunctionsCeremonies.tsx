@@ -38,23 +38,23 @@ export default function FunctionsCeremonies({
       <div className="px-6 pt-7 pb-5 md:pt-16 md:pb-12">
         <div className="mb-5 md:mb-10 flex flex-col items-center">
           <div className="relative w-[150px] max-w-[78vw] md:w-[300px] aspect-[1700/3000] opacity-100">
-            <Image 
-              src={selectedTopIcon.src} 
-              alt={selectedTopIcon.alt} 
-              fill 
+            <Image
+              src={selectedTopIcon.src}
+              alt={selectedTopIcon.alt}
+              fill
               sizes="(max-width: 768px) 260px, 360px"
-              className="object-contain" 
+              className="object-contain"
               unoptimized
             />
           </div>
         </div>
         <div className="relative mx-auto w-[70vw] md:w-[50vw] max-w-[600px] aspect-[2/1]">
-          <Image 
-            src="/photos/functions.png" 
-            alt="Functions & Ceremonies" 
-            fill 
+          <Image
+            src="/photos/functions.png"
+            alt="Functions & Ceremonies"
+            fill
             sizes="(max-width: 768px) 70vw, 600px"
-            className="object-contain" 
+            className="object-contain"
           />
         </div>
       </div>
@@ -181,14 +181,14 @@ function TimelineItem({
           </span>
         )}
         {location && (
-          <span className="block font-serif italic text-white/80 mt-0.5
+          <span className="block font-serif italic text-white/90 mt-0.5
                            text-[15px] tracking-[0.15em]
                            md:text-[20px] md:tracking-[0.2em] md:mt-1">
             {location}
           </span>
         )}
         {followedBy && (
-          <span className="block font-serif uppercase text-white/70 mt-0.5
+          <span className="block font-serif uppercase text-white/90 mt-0.5
                            text-[11px] tracking-[0.2em]
                            md:text-[18px] md:tracking-[0.3em] md:mt-1">
             {followedBy}
