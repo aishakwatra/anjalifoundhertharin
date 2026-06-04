@@ -23,13 +23,23 @@ export default function Home() {
       <Countdown />
       <LocationBlock
         dayLabel="Day One"
+        date="26 . 06 . 2026 - MEHENDI"
+        venueName="Location: Mata Garden, Rama 5"
+        venueImage="/photos/mehendi.png"
+        details={["15:00 - 19:00"]}
+        showLocationLabel={false}
+        venueImageSize="small"
+        detailsSize="large"
+      />
+      <LocationBlock
+        dayLabel="Day Two"
         date="27 . 06 . 2026 — THE WEDDING"
         venueName="The Westin Grande Sukhumvit, Bangkok"
         venueImage="/photos/westin.png"
       />
       <FunctionsCeremonies topIcon="onkar" />
       <LocationBlock
-        dayLabel="Day Two"
+        dayLabel="Day Three"
         date="28 . 06 . 2026 — THE RECEPTION"
         venueName="Royal Orchid Sheraton Riverside Hotel, Bangkok"
         venueImage="/photos/orchid.png"

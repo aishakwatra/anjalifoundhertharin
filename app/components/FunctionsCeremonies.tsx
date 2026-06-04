@@ -15,7 +15,7 @@ const topIcons: Record<TopIcon, { src: string; alt: string }> = {
 
 const phereFollowUps: Record<TopIcon, string> = {
   ganesh: "Followed by Vidai",
-  onkar: "Followed by Doli",
+  onkar: "Followed by Doli at Presidential Suit 24th Floor",
 };
 
 const varmalaEvents: Record<TopIcon, string> = {
@@ -31,6 +31,7 @@ export default function FunctionsCeremonies({
   const selectedTopIcon = topIcons[topIcon];
   const phereFollowUp = phereFollowUps[topIcon];
   const varmalaEvent = varmalaEvents[topIcon];
+  const isGroomSide = topIcon === "onkar";
 
   return (
     <section className="bg-sage pb-12 md:pb-24 text-center">
@@ -59,32 +60,35 @@ export default function FunctionsCeremonies({
       </div>
 
       <div className="px-9 md:px-24 text-left max-w-[900px] mx-auto">
-        <TimelineItem
-          time="15:00"
-          event="Sagan/Sehra Bandi"
-          location="Lower Lobby (G Floor)"
-          iconPath="/photos/sagan.png"
-        />
+        {isGroomSide && (
+          <TimelineItem
+            time="15:00"
+            event="Sagan/Sehra Bandi"
+            location="Lower Lobby (G Floor)"
+            iconPath="/photos/sagan.png"
+          />
+        )}
         <TimelineItem
           time="15:30"
           event="Baraat"
-          detail="Groom's Side"
           location="Lower Lobby (G Floor)"
           iconPath="/photos/baraat.png"
         />
-        <TimelineItem
-          time="16:30"
-          event="Milni"
-          location="Lower Lobby (G Floor)"
-          iconPath="/photos/milni.png"
-        />
-        <TimelineItem
-          time="16:45"
-          event="Welcome Baraat"
-          detail="Bride's Side"
-          location="Foyer Grand Ballroom (7th Floor)"
-          iconPath="/photos/baraat.png"
-        />
+        {isGroomSide ? (
+          <TimelineItem
+            time="16:30"
+            event="Milni"
+            location="Lower Lobby (G Floor)"
+            iconPath="/photos/milni.png"
+          />
+        ) : (
+          <TimelineItem
+            time="16:45"
+            event="Welcome Baraat"
+            location="Lobby (G Floor)"
+            iconPath="/photos/baraat.png"
+          />
+        )}
         <TimelineItem
           time="17:00"
           event={varmalaEvent}

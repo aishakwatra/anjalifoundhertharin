@@ -103,25 +103,9 @@ export default function HeroSaveTheDates({
       </p>
 
       {includesMehendi && (
-        <>
-          <div className="mx-auto flex items-center justify-center
-                          max-w-[290px] gap-3 mb-7
-                          md:max-w-[620px] md:gap-8 md:mb-16">
-            <div className="relative w-[96px] h-[120px]
-                            md:w-[140px] md:h-[180px]
-                            flex-shrink-0">
-              <Image
-                src="/photos/mehendi.png"
-                alt="Mehndi hands illustration"
-                fill
-                sizes="(max-width: 768px) 96px, 140px"
-                className="object-contain opacity-80"
-              />
-            </div>
-            <DateDetails dateKey="26" align="left" />
-          </div>
-
-        </>
+        <div className="mx-auto mb-7 md:mb-14">
+          <DateDetails dateKey="26" />
+        </div>
       )}
 
       <div className="flex justify-center mb-7 md:mb-16
@@ -136,15 +120,13 @@ export default function HeroSaveTheDates({
 
 function DateDetails({
   dateKey,
-  align = "center",
 }: {
   dateKey: DateKey;
-  align?: "center" | "left";
 }) {
   const event = events[dateKey];
 
   return (
-    <div className={align === "left" ? "text-left" : "text-center"}>
+    <div className="text-center">
       <span className="block font-display text-terracotta mb-1 md:mb-3
                        text-[14px] tracking-[0.15em]
                        md:text-[48px] md:tracking-[0.08em]">
@@ -155,15 +137,6 @@ function DateDetails({
                        md:text-[25px] md:tracking-[0.4em]">
         {event.label}
       </span>
-      {dateKey === "26" && (
-        <span className="block font-body text-text-mid mt-2 md:mt-4
-                         text-[11px] leading-[1.8] tracking-[0.08em]
-                         md:text-[18px] md:leading-[1.7] md:tracking-[0.1em]">
-          Mata Garden, Rama 5
-          <br />
-          15:00 - 19:00
-        </span>
-      )}
     </div>
   );
 }
