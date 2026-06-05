@@ -87,6 +87,12 @@ export default function EnvelopeGate({ onOpen }: EnvelopeGateProps) {
            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>
           Tap to open
         </p>
+        <p
+          className="mt-2 font-serif uppercase tracking-[0.22em] text-white/70 text-[11px] md:text-[12px]"
+          style={{ textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}
+        >
+          Turn up your volume
+        </p>
       </div>
     </div>
   );
