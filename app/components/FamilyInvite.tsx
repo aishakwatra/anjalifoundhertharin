@@ -21,6 +21,8 @@ export default function FamilyInvite({
   firstParentGroup?: ParentGroup;
 }) {
   const secondParentGroup = firstParentGroup === "groom" ? "bride" : "groom";
+  const coupleNames =
+    firstParentGroup === "groom" ? "Tharin & Anjali" : "Anjali & Tharin";
 
   return (
     <section className="bg-cream text-center px-8 py-16 md:px-12 md:py-24">
@@ -55,7 +57,7 @@ export default function FamilyInvite({
                     text-[18px]
                     md:text-[42px] md:tracking-[0.25em]
                     mb-6 md:mb-10">
-        Tharin & Anjali
+        {coupleNames}
       </p>
 
       <p className="font-body italic text-text-mid mx-auto

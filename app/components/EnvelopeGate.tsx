@@ -1,7 +1,19 @@
 'use client';
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+
+const INVITATION_AUDIO_SRC = "/audio/invitation-placeholder.mp3";
+let invitationAudio: HTMLAudioElement | null = null;
+
+function getInvitationAudio() {
+  if (!invitationAudio) {
+    invitationAudio = new Audio(INVITATION_AUDIO_SRC);
+    invitationAudio.preload = "auto";
+  }
+
+  return invitationAudio;
+}
 
 interface EnvelopeGateProps {
   onOpen: () => void;
@@ -9,6 +21,7 @@ interface EnvelopeGateProps {
 
 export default function EnvelopeGate({ onOpen }: EnvelopeGateProps) {
   const [fading, setFading] = useState(false);
+  const openedRef = useRef(false);
 
   // Lock scroll on mount, unlock on unmount
   useEffect(() => {
@@ -19,6 +32,15 @@ export default function EnvelopeGate({ onOpen }: EnvelopeGateProps) {
   }, []);
 
   const handleClick = () => {
+    if (openedRef.current) {
+      return;
+    }
+
+    openedRef.current = true;
+    const audio = getInvitationAudio();
+    audio.currentTime = 0;
+    void audio.play().catch(() => undefined);
+
     setFading(true);
     setTimeout(onOpen, 800);
   };
