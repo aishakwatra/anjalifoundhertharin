@@ -74,7 +74,7 @@ export default function ReceptionBanner() {
         <span className="block font-serif uppercase text-white
                          text-[13px] tracking-[0.3em] mt-1
                          md:text-[25px] md:tracking-[0.4em] md:mt-2">
-          World Cup Jersey or Sports Attire
+          World Cup Jersey / Sports Attire
         </span>
       </div>
       </div>
